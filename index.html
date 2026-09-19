@@ -1,1025 +1,220 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaClean | Higienização & Impermeabilização Profissional de Estofados</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts Inter & Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            200: '#99f6e4',
-                            400: '#2dd4bf',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
-                        },
-                        accent: {
-                            500: '#0284c7',
-                            600: '#0369a1',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Estilos personalizados para o Slider de Comparação Antes/Depois */
-        .ba-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            border-radius: 1rem;
-            user-select: none;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-        .ba-image-before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 50%;
-            overflow: hidden;
-            z-index: 10;
-            border-right: 3px solid #14b8a6;
-        }
-        .ba-image-before img, .ba-image-after img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-        .ba-slider-handle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: #14b8a6;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
-            z-index: 20;
-            cursor: ew-resize;
-            border: 3px solid white;
-        }
-        
-        /* Glassmorphism custom effects */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #0d9488;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanMax | Higienização e Limpeza Espacial de Estofados</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+<body>
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-slate-200/80 shadow-sm" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-accent-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
-                        <i class="fa-solid font-bold fa-wand-magic-sparkles text-xl"></i>
-                    </div>
-                    <div>
-                        <span class="font-display font-extrabold text-2xl tracking-tight bg-gradient-to-r from-brand-800 to-accent-600 bg-clip-text text-transparent">AquaClean</span>
-                        <span class="block text-[10px] uppercase tracking-widest font-semibold text-brand-600 -mt-1">Higienização Têxtil</span>
-                    </div>
-                </a>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-sparkles"></i> Clean<span>Max</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#antes-depois">Antes & Depois</a></li>
+          <li><a href="#orcamento">Simulador</a></li>
+          <li><a href="#contato" class="btn-nav">Falar no WhatsApp</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
-                    <a href="#sobre" class="hover:text-brand-600 transition-colors">Sobre</a>
-                    <a href="#servicos" class="hover:text-brand-600 transition-colors">Serviços</a>
-                    <a href="#galeria" class="hover:text-brand-600 transition-colors">Antes & Depois</a>
-                    <a href="#calculadora" class="hover:text-brand-600 transition-colors">Orçamento</a>
-                    <a href="#depoimentos" class="hover:text-brand-600 transition-colors">Avaliações</a>
-                </nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="tagline"><i class="fa-solid fa-shield-virus"></i> Eliminação de 99.9% dos microorganismos</span>
+        <h1>Seu sofá novo de novo, livre de sujeira e bactérias</h1>
+        <p>Especialistas em higienização profunda, remoção de manchas e impermeabilização de estofados com secagem rápida e produtos atóxicos.</p>
+        <div class="hero-btns">
+          <a href="#orcamento" class="btn btn-primary"><i class="fa-solid fa-calculator"></i> Simular Orçamento</a>
+          <a href="#antes-depois" class="btn btn-secondary"><i class="fa-solid fa-images"></i> Ver Resultados</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="badge-experience">
+          <span class="number">100%</span>
+          <span class="text">Garantia de Satisfação</span>
+        </div>
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800" alt="Sofá limpo e moderno">
+      </div>
+    </div>
+  </section>
 
-                <!-- CTA Button Header -->
-                <div class="hidden sm:flex items-center gap-4">
-                    <a href="#calculadora" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 text-white font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg hover:from-brand-700 hover:to-brand-600 transition-all transform hover:-translate-y-0.5 text-sm">
-                        <i class="fa-solid fa-calculator text-xs"></i>
-                        <span>Simular Preço</span>
-                    </a>
-                </div>
+  <!-- Sobre Nós -->
+  <section id="sobre" class="section">
+    <div class="container grid-2">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" alt="Higienização de estofados em processo">
+      </div>
+      <div class="about-text">
+        <h2>Especialistas em Restauração de Estofados</h2>
+        <p>Na <strong>CleanMax</strong>, utilizamos equipamentos de extração a vácuo de alta performance e produtos biodegradáveis certificados pela Anvisa. Removemos sujeiras impregnadas, ácaros, bactérias e maus odores sem danificar os tecidos.</p>
+        <ul class="benefits-list">
+          <li><i class="fa-solid fa-circle-check"></i> Produtos Atóxicos (Pet & Child Friendly)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Extratoras Profissionais de Alta Potência</li>
+          <li><i class="fa-solid fa-circle-check"></i> Atendimento Rápido em Domicílio</li>
+          <li><i class="fa-solid fa-circle-check"></i> Secagem Otimizada em poucas horas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition-colors">
-                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
-                </button>
-            </div>
+  <!-- Serviços -->
+  <section id="servicos" class="section bg-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nossos Serviços</h2>
+        <p>Soluções completas para todos os tipos de estofados e ambientes</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-couch"></i></div>
+          <h3>Higienização de Sofás</h3>
+          <p>Limpeza profunda para retráteis, reclináveis e de canto. Remoção de sujeira da estrutura interna e externa da espuma.</p>
         </div>
 
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#sobre" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Sobre Nós</a>
-            <a href="#servicos" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Serviços</a>
-            <a href="#galeria" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Antes & Depois</a>
-            <a href="#calculadora" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Simulador de Orçamento</a>
-            <a href="#depoimentos" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Avaliações</a>
-            <div class="pt-2">
-                <a href="#calculadora" class="mobile-link flex items-center justify-center gap-2 w-full bg-brand-600 text-white font-semibold py-3 rounded-xl shadow">
-                    <i class="fa-solid fa-calculator"></i>
-                    <span>Simular Preço Agora</span>
-                </a>
-            </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-bed"></i></div>
+          <h3>Colchões e Cabeceiras</h3>
+          <p>Tratamento intensivo antiácaro e bactericida. Essencial para prevenção de crises alérgicas e qualidade do sono.</p>
         </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-brand-50/70 via-slate-50 to-slate-50">
-        <!-- Background Glow FX -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-200/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
-        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-accent-500/10 rounded-full blur-2xl pointer-events-none -z-10"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Text -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 border border-brand-200 text-brand-800 text-xs font-semibold tracking-wide uppercase">
-                        <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-pulse"></span>
-                        Higienização Profunda & Biosegurança
-                    </div>
-
-                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
-                        Restaure a beleza e a saúde do seu <span class="bg-gradient-to-r from-brand-600 via-teal-500 to-accent-600 bg-clip-text text-transparent">estofado</span>
-                    </h1>
-
-                    <p class="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                        Elimine até 99.9% de ácaros, fungos, manchas e odores impregnados com nossa extração profunda de alta tecnologia e produtos 100% atóxicos.
-                    </p>
-
-                    <!-- Hero Action Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#calculadora" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-brand-600/30 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-base">
-                            <i class="fa-solid fa-calculator text-lg"></i>
-                            <span>Calcular Orçamento Instantâneo</span>
-                        </a>
-                        <a href="#galeria" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold px-6 py-4 rounded-2xl shadow-sm transition-all text-base">
-                            <i class="fa-regular fa-circle-play text-brand-600 text-lg"></i>
-                            <span>Ver Resultados Verídicos</span>
-                        </a>
-                    </div>
-
-                    <!-- Trust Badges -->
-                    <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
-                        <div class="flex flex-col items-center lg:items-start">
-                            <div class="text-slate-900 font-bold text-lg flex items-center gap-1">
-                                <i class="fa-solid fa-shield-virus text-brand-600"></i> ANVISA
-                            </div>
-                            <span class="text-xs text-slate-500 font-medium">Produtos Certificados</span>
-                        </div>
-                        <div class="flex flex-col items-center lg:items-start">
-                            <div class="text-slate-900 font-bold text-lg flex items-center gap-1">
-                                <i class="fa-solid fa-paw text-brand-600"></i> Pet Friendly
-                            </div>
-                            <span class="text-xs text-slate-500 font-medium">Sem Química Nociva</span>
-                        </div>
-                        <div class="flex flex-col items-center lg:items-start">
-                            <div class="text-slate-900 font-bold text-lg flex items-center gap-1">
-                                <i class="fa-solid fa-bolt text-brand-600"></i> Secagem
-                            </div>
-                            <span class="text-xs text-slate-500 font-medium">Ultra Rápida</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Image Showcase with floating card -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Main Frame -->
-                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
-                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000" alt="Sofá higienizado e limpo" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-                            
-                            <!-- Bottom Label inside Image -->
-                            <div class="absolute bottom-6 left-6 right-6 text-white">
-                                <div class="flex items-center gap-2 mb-1 text-brand-400 font-semibold text-sm">
-                                    <i class="fa-solid fa-check-circle"></i> Padrão Ouro de Qualidade
-                                </div>
-                                <h3 class="text-xl font-bold font-display">Higienização Têxtil Residencial</h3>
-                            </div>
-                        </div>
-
-                        <!-- Floating Stat Card 1 -->
-                        <div class="absolute -top-6 -left-6 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/60 animate-bounce" style="animation-duration: 4s;">
-                            <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-600 text-xl font-bold">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div>
-                                <div class="font-extrabold text-slate-900 text-lg">4.9 / 5.0</div>
-                                <div class="text-xs font-medium text-slate-500">+1.500 Avaliações</div>
-                            </div>
-                        </div>
-
-                        <!-- Floating Stat Card 2 -->
-                        <div class="absolute -bottom-6 -right-6 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white/60">
-                            <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center text-accent-600 text-xl font-bold">
-                                <i class="fa-solid fa-droplet-slash"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-slate-900 text-sm">Impermeabilização</div>
-                                <div class="text-xs text-brand-600 font-semibold">Tecnologia Nano Têxtil</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-chair"></i></div>
+          <h3>Cadeiras e Banquetas</h3>
+          <p>Revitalização de cadeiras de jantar, poltronas e assentos corporativos com eliminação de manchas de alimentos.</p>
         </div>
-    </section>
 
-    <!-- ABOUT & METRICS SECTION -->
-    <section id="sobre" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Column -->
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 text-brand-600 font-bold text-sm uppercase tracking-wider">
-                        <i class="fa-solid fa-award"></i>
-                        <span>Excelência e Inovação</span>
-                    </div>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900">
-                        Especialistas em revitalizar o conforto do seu lar
-                    </h2>
-                    <p class="text-slate-600 leading-relaxed">
-                        Na AquaClean, combinamos extração a vácuo de alta sucção com sanitizantes bactericidas e fungicidas desenvolvidos para proteger a saúde da sua família. Nosso processo não limpa apenas a superfície; ele penetra profundamente na espuma eliminando a sujeira invisível.
-                    </p>
-
-                    <!-- Features list -->
-                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <span class="text-slate-700 text-sm font-medium">Extração Extrema a Vácuo (Remove 90% da umidade)</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <span class="text-slate-700 text-sm font-medium">Produtos Hipoalergênicos e Biodegradáveis</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <span class="text-slate-700 text-sm font-medium">Eliminação de Odores Orgânicos e Pets</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold flex-shrink-0">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <span class="text-slate-700 text-sm font-medium">Técnicos Certificados e Fardados</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Grid -->
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-gradient-to-br from-slate-50 to-brand-50/50 p-6 rounded-3xl border border-slate-200/80 text-center hover:border-brand-300 transition-colors">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-brand-600/20">
-                            <i class="fa-solid fa-couch"></i>
-                        </div>
-                        <div class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 mb-1" id="counter-estofados">4.500+</div>
-                        <p class="text-slate-500 text-sm font-medium">Estofados Higienizados</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-slate-50 to-brand-50/50 p-6 rounded-3xl border border-slate-200/80 text-center hover:border-brand-300 transition-colors">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-accent-500 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-accent-500/20">
-                            <i class="fa-solid fa-face-smile"></i>
-                        </div>
-                        <div class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 mb-1" id="counter-clientes">3.200+</div>
-                        <p class="text-slate-500 text-sm font-medium">Clientes Satisfeitos</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-slate-50 to-brand-50/50 p-6 rounded-3xl border border-slate-200/80 text-center hover:border-brand-300 transition-colors">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-teal-500 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-teal-500/20">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <div class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 mb-1">99.9%</div>
-                        <p class="text-slate-500 text-sm font-medium">Eficácia Anti-ácaros</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-slate-50 to-brand-50/50 p-6 rounded-3xl border border-slate-200/80 text-center hover:border-brand-300 transition-colors">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-md shadow-amber-500/20">
-                            <i class="fa-solid fa-clock-rotate-left"></i>
-                        </div>
-                        <div class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 mb-1">6 Anos</div>
-                        <p class="text-slate-500 text-sm font-medium">De Experiência</p>
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Impermeabilização</h3>
+          <p>Proteção com película invisível que repele líquidos e café, evitando manchas definitivas no tecido.</p>
         </div>
-    </section>
 
-    <!-- SERVICES CATALOG SECTION -->
-    <section id="servicos" class="py-20 bg-slate-100/70 border-y border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Catálogo Interativo</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900">Soluções completas para todos os seus tecidos</h2>
-                <p class="text-slate-600">Passe o mouse ou toque nos cards abaixo para visualizar os detalhes técnicos de cada modalidade de tratamento.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Service Card 1 -->
-                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="relative h-48 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=600" alt="Higienização de Sofá" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-700">Mais Solicitado</div>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-lg font-bold">
-                            <i class="fa-solid fa-couch"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Higienização de Sofás</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Tratamento profundo para sofás retráteis, de canto ou fixos. Remove acúmulo de sujeira, restos de alimentos, suor e manchas do dia a dia.
-                        </p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-500 pt-2 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Limpeza profunda de fibra e espuma</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Sanitização bactericida inclusa</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="relative h-48 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=600" alt="Limpeza de Colchão" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-10 h-10 rounded-xl bg-accent-500/10 text-accent-600 flex items-center justify-center text-lg font-bold">
-                            <i class="fa-solid fa-bed"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Colchões e Cabeceiras</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Tratamento focado na eliminação de fungos, mofo e bactérias causadoras de alergias respiratórias e rinite.
-                        </p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-500 pt-2 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Remoção de amarelados e ácaros</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Neutralização de maus odores</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="relative h-48 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=600" alt="Impermeabilização" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 bg-amber-100 px-3 py-1 rounded-full text-xs font-bold text-amber-800">Proteção Total</div>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg font-bold">
-                            <i class="fa-solid fa-shield-cat"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Impermeabilização Nano</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Cria uma camada protetora invisível que repele café, água, vinho e refrigerantes sem alterar a textura ou a cor do tecido.
-                        </p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-500 pt-2 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Garantia de 1 ano com certificado</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Proteção contra raios UV e desgaste</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="relative h-48 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=600" alt="Higienização Automotiva" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-lg font-bold">
-                            <i class="fa-solid fa-car-side"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Interior Automotivo</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Limpeza completa de bancos de tecido ou hidratação de bancos de couro, além de teto, carpetes e portas do veículo.
-                        </p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-500 pt-2 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Hidratação de couro legítimo</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Remoção de cheiro de cigarro e mofo</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="relative h-48 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80&w=600" alt="Cadeiras e Poltronas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg font-bold">
-                            <i class="fa-solid fa-chair"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Cadeiras e Poltronas</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Restauração estética de conjuntos de cadeiras de jantar, cadeiras gamer e poltronas de amamentação ou descanso.
-                        </p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-500 pt-2 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Remoção de graxa e sujidade</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Desconto especial para jogos de cadeiras</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="relative h-48 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80&w=600" alt="Higienização Corporativa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-lg font-bold">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Atendimento Corporativo</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Higienização para escritórios, auditórios, hotéis e clínicas com horários flexíveis e emissão de nota fiscal.
-                        </p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-500 pt-2 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Atendimento fora do expediente</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-500"></i> Laudo bacteriológico sob demanda</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-car-side"></i></div>
+          <h3>Higienização Automotiva</h3>
+          <p>Limpeza detalhada de bancos em tecido ou couro, teto e carpetes do seu veículo.</p>
         </div>
-    </section>
 
-    <!-- BEFORE / AFTER INTERACTIVE GALERY -->
-    <section id="galeria" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Resultados Comprovados</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900">Deslize para ver a transformação</h2>
-                <p class="text-slate-600">Arraste o divisor interativo no meio das imagens para conferir o poder do nosso sistema de extração profunda.</p>
-            </div>
-
-            <!-- Before/After Slider Container -->
-            <div class="max-w-4xl mx-auto">
-                <div class="ba-container aspect-[16/10] sm:aspect-[16/9]" id="baSlider">
-                    <!-- Image After (Base Layer) -->
-                    <div class="ba-image-after w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1200" alt="Sofá Depois da Limpeza">
-                        <span class="absolute bottom-4 right-4 bg-brand-600/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow uppercase">DEPOIS (Higienizado)</span>
-                    </div>
-
-                    <!-- Image Before (Overlay Layer) -->
-                    <div class="ba-image-before" id="baBeforeImage">
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1200" alt="Sofá Antes da Limpeza" style="filter: sepia(0.5) contrast(1.1) brightness(0.7);">
-                        <span class="absolute bottom-4 left-4 bg-slate-900/80 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow uppercase">ANTES (Sujo/Encardido)</span>
-                    </div>
-
-                    <!-- Handle Button -->
-                    <div class="ba-slider-handle" id="baHandle">
-                        <i class="fa-solid fa-arrows-left-right text-xs"></i>
-                    </div>
-                </div>
-                <p class="text-center text-xs text-slate-400 mt-3 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-hand-pointer"></i> Clique e arraste o controle central para os lados
-                </p>
-            </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-paw"></i></div>
+          <h3>Remoção de Odores Pet</h3>
+          <p>Tratamento biológico específico para neutralização de cheiro de urina de cães e gatos nas fibras.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- INTERACTIVE CALCULATOR SECTION -->
-    <section id="calculadora" class="py-20 bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 text-white relative overflow-hidden">
-        
-        <!-- Decorative Glow -->
-        <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Comparador Antes / Depois -->
+  <section id="antes-depois" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Resultados Reais (Antes & Depois)</h2>
+        <p>Arraste a divisória para ver a transformação completa do estofado</p>
+      </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <span class="text-brand-400 font-bold text-sm uppercase tracking-wider">Simulador de Valores</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Monte seu Orçamento Personalizado</h2>
-                <p class="text-slate-300">Escolha o seu estofado, selecione adicionais e receba um orçamento prévio em tempo real com envio imediato para o WhatsApp.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Calculator Options Form (Col 7) -->
-                <div class="lg:col-span-7 bg-slate-800/80 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-slate-700/80 shadow-2xl space-y-6">
-                    
-                    <!-- Step 1: Select Type -->
-                    <div>
-                        <label class="block text-sm font-semibold text-brand-300 uppercase tracking-wider mb-3">
-                            1. Selecione o Tipo de Estofado
-                        </label>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="itemSelector">
-                            <!-- JS dynamically generates or handles active states -->
-                            <button type="button" data-price="180" data-name="Sofá 2 Lugares" class="calc-btn active p-3 rounded-2xl border border-brand-500 bg-brand-500/20 text-left hover:border-brand-400 transition-all">
-                                <i class="fa-solid fa-couch text-brand-400 text-lg mb-1 block"></i>
-                                <div class="font-bold text-sm text-white">Sofá 2 Lugares</div>
-                                <div class="text-xs text-slate-400">Padrão/Fixo</div>
-                            </button>
-
-                            <button type="button" data-price="240" data-name="Sofá 3 Lugares / Retrátil" class="calc-btn p-3 rounded-2xl border border-slate-700 bg-slate-900/50 text-left hover:border-brand-500/50 transition-all">
-                                <i class="fa-solid fa-couch text-slate-400 text-lg mb-1 block"></i>
-                                <div class="font-bold text-sm text-white">Sofá 3 Lugares</div>
-                                <div class="text-xs text-slate-400">Retrátil/Reclinável</div>
-                            </button>
-
-                            <button type="button" data-price="320" data-name="Sofá de Canto / Chaise" class="calc-btn p-3 rounded-2xl border border-slate-700 bg-slate-900/50 text-left hover:border-brand-500/50 transition-all">
-                                <i class="fa-solid fa-couch text-slate-400 text-lg mb-1 block"></i>
-                                <div class="font-bold text-sm text-white">Sofá Canto/L</div>
-                                <div class="text-xs text-slate-400">Grandes dimensões</div>
-                            </button>
-
-                            <button type="button" data-price="150" data-name="Colchão Casal / Queen" class="calc-btn p-3 rounded-2xl border border-slate-700 bg-slate-900/50 text-left hover:border-brand-500/50 transition-all">
-                                <i class="fa-solid fa-bed text-slate-400 text-lg mb-1 block"></i>
-                                <div class="font-bold text-sm text-white">Colchão Casal</div>
-                                <div class="text-xs text-slate-400">Casal ou Queen</div>
-                            </button>
-
-                            <button type="button" data-price="120" data-name="Poltrona / Amamentação" class="calc-btn p-3 rounded-2xl border border-slate-700 bg-slate-900/50 text-left hover:border-brand-500/50 transition-all">
-                                <i class="fa-solid fa-chair text-slate-400 text-lg mb-1 block"></i>
-                                <div class="font-bold text-sm text-white">Poltrona</div>
-                                <div class="text-xs text-slate-400">Individual</div>
-                            </button>
-
-                            <button type="button" data-price="140" data-name="Conjunto de Cadeiras (4 Unidades)" class="calc-btn p-3 rounded-2xl border border-slate-700 bg-slate-900/50 text-left hover:border-brand-500/50 transition-all">
-                                <i class="fa-solid fa-chair text-slate-400 text-lg mb-1 block"></i>
-                                <div class="font-bold text-sm text-white">Jogo 4 Cadeiras</div>
-                                <div class="text-xs text-slate-400">Mesa de Jantar</div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Extras & Addons -->
-                    <div>
-                        <label class="block text-sm font-semibold text-brand-300 uppercase tracking-wider mb-3">
-                            2. Opcionais de Tratamento Especial
-                        </label>
-                        <div class="space-y-3">
-                            <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-700 bg-slate-900/40 cursor-pointer hover:bg-slate-900/80 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <input type="checkbox" id="chkImpermeabilizacao" value="120" class="w-5 h-5 accent-brand-500 rounded">
-                                    <div>
-                                        <div class="text-sm font-bold text-white">Impermeabilização Têxtil Nano</div>
-                                        <div class="text-xs text-slate-400">Proteção contra derramamento de líquidos (+ R$ 120,00)</div>
-                                    </div>
-                                </div>
-                                <i class="fa-solid fa-shield-cat text-amber-400"></i>
-                            </label>
-
-                            <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-700 bg-slate-900/40 cursor-pointer hover:bg-slate-900/80 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <input type="checkbox" id="chkOdorPet" value="50" class="w-5 h-5 accent-brand-500 rounded">
-                                    <div>
-                                        <div class="text-sm font-bold text-white">Remoção Intensiva Odor/Urina Pet</div>
-                                        <div class="text-xs text-slate-400">Tratamento enzimático neutralizador (+ R$ 50,00)</div>
-                                    </div>
-                                </div>
-                                <i class="fa-solid fa-dog text-brand-400"></i>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Step 3: Location -->
-                    <div>
-                        <label class="block text-sm font-semibold text-brand-300 uppercase tracking-wider mb-2">
-                            3. Região do Atendimento
-                        </label>
-                        <select id="regiaoSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 text-sm">
-                            <option value="0">Centro / Zona Urbana (Taxa de deslocamento grátis)</option>
-                            <option value="20">Zona Sul / Bairros Afastados (+ R$ 20,00)</option>
-                            <option value="40">Região Metropolitana / Cidades Vizinhas (+ R$ 40,00)</option>
-                        </select>
-                    </div>
-
-                </div>
-
-                <!-- Live Price Summary Box (Col 5) -->
-                <div class="lg:col-span-5 bg-gradient-to-b from-brand-900/90 to-slate-900 p-6 sm:p-8 rounded-3xl border border-brand-500/30 shadow-2xl relative sticky top-28">
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-center border-b border-brand-800/80 pb-4">
-                            <h3 class="font-display text-xl font-bold text-white">Resumo do Orçamento</h3>
-                            <span class="bg-brand-500/20 text-brand-300 text-xs font-bold px-2.5 py-1 rounded-full border border-brand-500/40">Estimativa Instantânea</span>
-                        </div>
-
-                        <!-- Details List -->
-                        <div class="space-y-3 text-sm">
-                            <div class="flex justify-between text-slate-300">
-                                <span>Item selecionado:</span>
-                                <span class="font-bold text-white" id="summaryItemName">Sofá 2 Lugares</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span>Higienização Base:</span>
-                                <span class="font-bold text-white" id="summaryBasePrice">R$ 180,00</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span>Opcionais selecionados:</span>
-                                <span class="font-bold text-white" id="summaryExtrasPrice">R$ 0,00</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span>Deslocamento:</span>
-                                <span class="font-bold text-white" id="summaryFee">R$ 0,00</span>
-                            </div>
-                        </div>
-
-                        <div class="pt-4 border-t border-brand-800/80">
-                            <span class="text-xs text-slate-400 uppercase tracking-wider block mb-1">Valor Total Estimado</span>
-                            <div class="text-4xl font-extrabold font-display text-brand-300" id="totalPrice">R$ 180,00</div>
-                            <p class="text-[11px] text-slate-400 mt-1">*O valor final pode variar após inspeção presencial do tecido.</p>
-                        </div>
-
-                        <!-- Customer Details Input inside Summary -->
-                        <div class="space-y-3 pt-2">
-                            <input type="text" id="custName" placeholder="Seu Nome Completo" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-400">
-                            <input type="text" id="custAddress" placeholder="Bairro / Cidade" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-400">
-                        </div>
-
-                        <!-- Submit WhatsApp Button -->
-                        <button type="button" id="btnSendWhatsapp" class="w-full flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-emerald-500/20 transition-all text-base transform hover:-translate-y-0.5">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i>
-                            <span>Enviar para o WhatsApp</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
+      <div class="comparison-wrapper">
+        <div class="comparison-container" id="comparison-slider">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1200" alt="Depois - Sofá Limpo" class="img-after">
+          <div class="img-before-wrapper">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1200" alt="Antes - Sofá Sujo" class="img-before">
+          </div>
+          <div class="slider-handle">
+            <div class="handle-line"></div>
+            <div class="handle-button"><i class="fa-solid fa-left-right"></i></div>
+            <div class="handle-line"></div>
+          </div>
+          <span class="label label-before">ANTES</span>
+          <span class="label label-after">DEPOIS</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section id="depoimentos" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Depoimentos Reais</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900">O que nossos clientes dizem</h2>
-                <p class="text-slate-600">A satisfação de quem confiou em nosso trabalho para renovar os estofados da família.</p>
+  <!-- Simulador de Orçamento -->
+  <section id="orcamento" class="section bg-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Simulador de Orçamento Instantâneo</h2>
+        <p>Calcule uma estimativa do seu atendimento e envie diretamente para nosso WhatsApp</p>
+      </div>
+
+      <div class="calculator-card">
+        <form id="calc-form">
+          <div class="form-group">
+            <label for="item-type"><i class="fa-solid fa-list"></i> Selecione o Estofado:</label>
+            <select id="item-type" onchange="calculateTotal()">
+              <option value="120">Sofá 2 Lugares (R$ 120)</option>
+              <option value="180" selected>Sofá 3 Lugares / Retrátil (R$ 180)</option>
+              <option value="250">Sofá de Canto / L (R$ 250)</option>
+              <option value="150">Colchão Casal / Queen (R$ 150)</option>
+              <option value="90">Colchão Solteiro (R$ 90)</option>
+              <option value="80">Jogo de 4 Cadeiras (R$ 80)</option>
+              <option value="140">Jogo de 6 Cadeiras (R$ 140)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-plus-circle"></i> Serviços Adicionais:</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" id="add-imper" value="100" onchange="calculateTotal()"> Impermeabilização (+ R$ 100)</label>
+              <label><input type="checkbox" id="add-pet" value="40" onchange="calculateTotal()"> Tratamento Antibacteriano / Pet (+ R$ 40)</label>
             </div>
+          </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Review Card 1 -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
-                    <div class="flex text-amber-400 gap-1 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed font-normal">
-                        "Meu sofá retrátil claro estava com várias manchas de suco e sujeira dos cachorros. Achei que teria que trocar o estofado, mas a equipe deixou novo em folha! Impressionante."
-                    </p>
-                    <div class="flex items-center gap-3 pt-2">
-                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">
-                            MC
-                        </div>
-                        <div>
-                            <div class="font-bold text-slate-900 text-sm">Mariana Costa</div>
-                            <div class="text-xs text-slate-400">Atendida em Residência</div>
-                        </div>
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="client-name"><i class="fa-solid fa-user"></i> Seu Nome:</label>
+            <input type="text" id="client-name" placeholder="Ex: Gabriel Oliveira" required>
+          </div>
 
-                <!-- Review Card 2 -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
-                    <div class="flex text-amber-400 gap-1 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed font-normal">
-                        "Fiz a higienização do colchão do meu filho que tem rinite grave. A diferença no ar do quarto no mesmo dia foi notável. Serviço pontual, limpo e super atencioso."
-                    </p>
-                    <div class="flex items-center gap-3 pt-2">
-                        <div class="w-10 h-10 rounded-full bg-accent-500/10 text-accent-600 font-bold flex items-center justify-center text-sm">
-                            RS
-                        </div>
-                        <div>
-                            <div class="font-bold text-slate-900 text-sm">Rodrigo Santos</div>
-                            <div class="text-xs text-slate-400">Higienização de Colchão</div>
-                        </div>
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="client-neighborhood"><i class="fa-solid fa-location-dot"></i> Bairro e Cidade:</label>
+            <input type="text" id="client-neighborhood" placeholder="Ex: Centro - Sua Cidade" required>
+          </div>
 
-                <!-- Review Card 3 -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
-                    <div class="flex text-amber-400 gap-1 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed font-normal">
-                        "Contratei a impermeabilização após a limpeza do meu sofá novo. Testei derramando água e o líquido realmente fica em gotas na superfície! Valeu cada centavo."
-                    </p>
-                    <div class="flex items-center gap-3 pt-2">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-sm">
-                            FL
-                        </div>
-                        <div>
-                            <div class="font-bold text-slate-900 text-sm">Fernanda Lima</div>
-                            <div class="text-xs text-slate-400">Limpeza + Impermeabilização</div>
-                        </div>
-                    </div>
-                </div>
+          <div class="price-display">
+            <span>Estimativa Total:</span>
+            <div class="price" id="total-price">R$ 180,00</div>
+          </div>
 
-            </div>
-        </div>
-    </section>
+          <button type="button" class="btn btn-whatsapp" onclick="sendWhatsApp()">
+            <i class="fa-brands fa-whatsapp"></i> Enviar Pedido via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                
-                <!-- Brand Info -->
-                <div class="space-y-4">
-                    <a href="#" class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white">
-                            <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
-                        </div>
-                        <span class="font-display font-extrabold text-2xl text-white tracking-tight">AquaClean</span>
-                    </a>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Transformando ambientes e renovando o conforto estético da sua casa com tecnologia de higienização de alto nível.
-                    </p>
-                    <div class="flex gap-3 text-lg pt-2">
-                        <a href="#" class="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
+  <!-- Footer -->
+  <footer id="contato">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h3>CleanMax Higienização</h3>
+        <p>Sua casa mais limpa, saudável e protegida.</p>
+      </div>
+      <div class="footer-contacts">
+        <p><i class="fa-solid fa-phone"></i> (00) 99999-9999</p>
+        <p><i class="fa-solid fa-envelope"></i> contato@cleanmax.com.br</p>
+        <p><i class="fa-solid fa-location-dot"></i> Atendimento em toda a Região</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CleanMax. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Navegação</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#sobre" class="hover:text-brand-400 transition-colors">Sobre Nós</a></li>
-                        <li><a href="#servicos" class="hover:text-brand-400 transition-colors">Catálogo de Serviços</a></li>
-                        <li><a href="#galeria" class="hover:text-brand-400 transition-colors">Galeria Antes & Depois</a></li>
-                        <li><a href="#calculadora" class="hover:text-brand-400 transition-colors">Calculadora de Preços</a></li>
-                    </ul>
-                </div>
-
-                <!-- Horários -->
-                <div>
-                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Atendimento</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>Segunda a Sexta: 08:00 - 18:00</li>
-                        <li>Sábado: 08:00 - 14:00</li>
-                        <li>Atendimento com hora marcada</li>
-                        <li class="text-brand-400 font-semibold pt-2">Atendemos em Domicílio</li>
-                    </ul>
-                </div>
-
-                <!-- Contato Direct -->
-                <div>
-                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Contato Direto</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-brand-500"></i>
-                            <span>(11) 99999-8888</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-brand-500"></i>
-                            <span>contato@aquacleanestofados.com.br</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-location-dot text-brand-500"></i>
-                            <span>São Paulo & Região Metropolitana</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="mt-12 pt-8 border-t border-slate-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p>&copy; 2026 AquaClean Higienização. Todos os direitos reservados.</p>
-                <p class="flex items-center gap-1">
-                    <i class="fa-solid fa-shield-heart text-brand-500"></i> Protegendo a saúde do seu lar
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- 1. MOBILE MENU TOGGLE ---
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuIcon = document.getElementById('menuIcon');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                if (mobileMenu.classList.contains('hidden')) {
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
-                } else {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-xmark');
-                }
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
-                });
-            });
-
-            // --- 2. BEFORE/AFTER SLIDER INTERACTIVITY ---
-            const baSlider = document.getElementById('baSlider');
-            const baBeforeImage = document.getElementById('baBeforeImage');
-            const baHandle = document.getElementById('baHandle');
-            let isDragging = false;
-
-            function updateSliderPosition(x) {
-                const rect = baSlider.getBoundingClientRect();
-                let positionX = x - rect.left;
-                
-                if (positionX < 0) positionX = 0;
-                if (positionX > rect.width) positionX = rect.width;
-
-                const percentage = (positionX / rect.width) * 100;
-                baBeforeImage.style.width = `${percentage}%`;
-                baHandle.style.left = `${percentage}%`;
-            }
-
-            // Mouse Events
-            baSlider.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                updateSliderPosition(e.clientX);
-            });
-
-            window.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
-
-            window.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                updateSliderPosition(e.clientX);
-            });
-
-            // Touch Events for Mobile
-            baSlider.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                updateSliderPosition(e.touches[0].clientX);
-            });
-
-            window.addEventListener('touchend', () => {
-                isDragging = false;
-            });
-
-            window.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                updateSliderPosition(e.touches[0].clientX);
-            });
-
-
-            // --- 3. INTERACTIVE CALCULATOR LOGIC ---
-            const itemBtns = document.querySelectorAll('#itemSelector .calc-btn');
-            const chkImpermeabilizacao = document.getElementById('chkImpermeabilizacao');
-            const chkOdorPet = document.getElementById('chkOdorPet');
-            const regiaoSelect = document.getElementById('regiaoSelect');
-
-            // Summary elements
-            const summaryItemName = document.getElementById('summaryItemName');
-            const summaryBasePrice = document.getElementById('summaryBasePrice');
-            const summaryExtrasPrice = document.getElementById('summaryExtrasPrice');
-            const summaryFee = document.getElementById('summaryFee');
-            const totalPriceEl = document.getElementById('totalPrice');
-
-            let selectedItem = {
-                name: 'Sofá 2 Lugares',
-                price: 180
-            };
-
-            // Switch Selected Item Button
-            itemBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    itemBtns.forEach(b => {
-                        b.classList.remove('active', 'border-brand-500', 'bg-brand-500/20');
-                        b.classList.add('border-slate-700', 'bg-slate-900/50');
-                        const icon = b.querySelector('i');
-                        if (icon) icon.className = icon.className.replace('text-brand-400', 'text-slate-400');
-                    });
-
-                    btn.classList.add('active', 'border-brand-500', 'bg-brand-500/20');
-                    btn.classList.remove('border-slate-700', 'bg-slate-900/50');
-                    const icon = btn.querySelector('i');
-                    if (icon) icon.className = icon.className.replace('text-slate-400', 'text-brand-400');
-
-                    selectedItem.name = btn.getAttribute('data-name');
-                    selectedItem.price = parseFloat(btn.getAttribute('data-price'));
-
-                    calculateTotal();
-                });
-            });
-
-            // Handle Checkboxes & Select changes
-            chkImpermeabilizacao.addEventListener('change', calculateTotal);
-            chkOdorPet.addEventListener('change', calculateTotal);
-            regiaoSelect.addEventListener('change', calculateTotal);
-
-            function calculateTotal() {
-                let basePrice = selectedItem.price;
-                let extrasTotal = 0;
-
-                if (chkImpermeabilizacao.checked) {
-                    extrasTotal += parseFloat(chkImpermeabilizacao.value);
-                }
-                if (chkOdorPet.checked) {
-                    extrasTotal += parseFloat(chkOdorPet.value);
-                }
-
-                let fee = parseFloat(regiaoSelect.value);
-                let grandTotal = basePrice + extrasTotal + fee;
-
-                // Update UI text
-                summaryItemName.textContent = selectedItem.name;
-                summaryBasePrice.textContent = `R$ ${basePrice.toFixed(2).replace('.', ',')}`;
-                summaryExtrasPrice.textContent = `R$ ${extrasTotal.toFixed(2).replace('.', ',')}`;
-                summaryFee.textContent = `R$ ${fee.toFixed(2).replace('.', ',')}`;
-                totalPriceEl.textContent = `R$ ${grandTotal.toFixed(2).replace('.', ',')}`;
-            }
-
-            // --- 4. SEND ORÇAMENTO VIA WHATSAPP ---
-            const btnSendWhatsapp = document.getElementById('btnSendWhatsapp');
-            const custName = document.getElementById('custName');
-            const custAddress = document.getElementById('custAddress');
-
-            btnSendWhatsapp.addEventListener('click', () => {
-                const name = custName.value.trim() || 'Cliente';
-                const address = custAddress.value.trim() || 'Não informado';
-
-                let extrasList = [];
-                if (chkImpermeabilizacao.checked) extrasList.push('Impermeabilização Têxtil');
-                if (chkOdorPet.checked) extrasList.push('Tratamento Odor/Urina Pet');
-                const extrasText = extrasList.length > 0 ? extrasList.join(', ') : 'Nenhum';
-
-                const totalStr = totalPriceEl.textContent;
-
-                // Format WhatsApp Message
-                const message = `Olá! Gostaria de agendar uma higienização.\n\n` +
-                    `*-- RESUMO DO ORÇAMENTO --*\n` +
-                    `👤 *Nome:* ${name}\n` +
-                    `📍 *Bairro/Cidade:* ${address}\n` +
-                    `🛋️ *Item:* ${selectedItem.name}\n` +
-                    `✨ *Opcionais:* ${extrasText}\n` +
-                    `💰 *Valor Estimado:* ${totalStr}\n\n` +
-                    `Poderia confirmar a disponibilidade de data para atendimento?`;
-
-                // Phone number format (replace with your business number)
-                const phoneNumber = "5511999998888"; 
-                const encodedMsg = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
-
-                window.open(whatsappUrl, '_blank');
-            });
-
-            // Initial calculation call
-            calculateTotal();
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
